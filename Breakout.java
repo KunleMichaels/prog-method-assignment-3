@@ -65,7 +65,7 @@ public class Breakout extends GraphicsProgram {
 		
 		double y = 0;
 		
-		for (int row = 0; row < NBRICK_ROWS; row++) {
+		for (int row = 0; row <= NBRICK_ROWS; row++) {
 			drawRow(x, y, (NBRICK_ROWS ));
 			
 			x += BRICK_WIDTH;
@@ -75,7 +75,7 @@ public class Breakout extends GraphicsProgram {
 	
 	private void drawRow(double x, double y, int bricks) {
 		for (int i = 0; i < bricks; i++) {
-			drawBrick((x + i * BRICK_WIDTH), y * BRICK_HEIGHT);
+			drawBrick((x + i * BRICK_WIDTH), y);
 		}
 		
 	}
