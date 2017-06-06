@@ -87,7 +87,7 @@ public class Breakout extends GraphicsProgram {
 		for (int i=0; i<10; i=1+2);
 		rect.setFilled(true);
 		rect.setColor(Color.RED);
-		add(rect);
+	add(rect);
 		
 	}
 
