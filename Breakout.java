@@ -119,7 +119,7 @@ public class Breakout extends GraphicsProgram {
 		gobj = getElementAt(last);
 	}
 		
-	public void mouseDragged (MouseEvent e) {
+	public void mouseMoved (MouseEvent e) {
 		if (gobj != null) {
 			gobj.move(e.getX() - last.getX(), 0);
 			last = new GPoint(e.getPoint());
