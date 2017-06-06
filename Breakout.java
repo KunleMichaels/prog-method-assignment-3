@@ -77,6 +77,7 @@ public class Breakout extends GraphicsProgram {
 		for (int i = 0; i < bricks; i++) {
 			drawBrick((x + i * BRICK_WIDTH), y);
 			x += BRICK_SEP;
+			y += BRICK_SEP;
 		}
 		
 	}
