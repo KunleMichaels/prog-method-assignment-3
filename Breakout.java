@@ -73,6 +73,10 @@ public class Breakout extends GraphicsProgram {
 				color = Color.ORANGE;
 			} else if (row<=5){
 				color = Color.YELLOW;
+			} else if (row<=7){
+				color = Color.GREEN;
+			} else {
+				color = Color.CYAN;
 			}
 			drawRow(x, y, (NBRICK_ROWS ), color);
 			y += BRICK_HEIGHT + BRICK_SEP;
