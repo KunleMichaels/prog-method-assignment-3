@@ -64,7 +64,7 @@ public class Breakout extends GraphicsProgram {
 		
 		double x = 0.5;
 		
-		double y = (getHeight() - NBRICK_ROWS) / 10;
+		double y = (getHeight() - 70);
 		
 		for (int row = 0; row <NBRICK_ROWS; row++) {
 			Color color = null;
