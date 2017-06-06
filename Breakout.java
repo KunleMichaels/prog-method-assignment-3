@@ -66,29 +66,27 @@ public class Breakout extends GraphicsProgram {
 		double y = (getHeight() - NBRICK_ROWS) / 8;
 		
 		for (int row = 0; row <NBRICK_ROWS; row++) {
-			drawRow(x, y, (NBRICK_ROWS ));
+			Color color = Color.RED;
+			drawRow(x, y, (NBRICK_ROWS ), color);
 			y += BRICK_HEIGHT + BRICK_SEP;
 			
 		}
 			
 	}
 	
-	private void drawRow(double x, double y, int bricks) {
+	private void drawRow(double x, double y, int bricks, Color color) {
 		for (int i = 0; i < bricks; i++) {
-			drawBrick((x + i * BRICK_WIDTH), y);
+			drawBrick((x + i * BRICK_WIDTH), y, color);
 			x += BRICK_SEP;
 			
 		}
 		
 	}
 	
-	private void drawBrick(double x, double y) {
+	private void drawBrick(double x, double y, Color color) {
 		GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-		
-		for (int i=NBRICK_ROWS; i>0; i--) {
-			rect.setFilled(true);
-			rect.setColor(Color.RED);add(rect);
-		}
+		rect.setFilled(true);
+		rect.setColor(color);add(rect);
 	
 		
 	}
