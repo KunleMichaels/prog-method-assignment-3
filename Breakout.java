@@ -107,7 +107,7 @@ public class Breakout extends GraphicsProgram {
 		addMouseListeners();
 	}
 		
-	public void mouseMoved (MouseEvent e) {
+	public void mouseDragged (MouseEvent e) {
 		double x = (getWidth()-PADDLE_WIDTH)/2;
 		double y = (getHeight()-PADDLE_HEIGHT *5);
 		GRect paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
