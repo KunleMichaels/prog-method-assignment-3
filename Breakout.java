@@ -61,6 +61,7 @@ public class Breakout extends GraphicsProgram {
 /** Runs the Breakout program. */
 	public void run() {
 		
+		
 		double x = 0.5;
 		
 		double y = (getHeight() - NBRICK_ROWS) / 10;
@@ -101,5 +102,16 @@ public class Breakout extends GraphicsProgram {
 	
 		
 	}
+	
+	public void init() {
+		addMouseListeners();
+	}
+		
+	public void mouseMoved (MouseEvent e) {
+		GRect paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
+		paddle.setLocation(0, getHeight());
+		add(paddle);
+	}
+	
 
 }
