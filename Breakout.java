@@ -61,7 +61,7 @@ public class Breakout extends GraphicsProgram {
 /** Runs the Breakout program. */
 	public void run() {
 		
-		double x = getWidth() ;
+		double x = 0;
 		
 		double y = getHeight();
 		
