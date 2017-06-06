@@ -89,7 +89,7 @@ public class Breakout extends GraphicsProgram {
 				rect.setColor(Color.RED);
 		add(rect);
 		
-		}
+			}
 		
 	}
 
