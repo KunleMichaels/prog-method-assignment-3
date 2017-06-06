@@ -109,7 +109,7 @@ public class Breakout extends GraphicsProgram {
 		
 	public void mouseMoved (MouseEvent e) {
 		GRect paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
-		paddle.setLocation(getWidth()/2, getHeight());
+		paddle.setLocation(getWidth()/2, getHeight()-PADDLE_HEIGHT);
 		add(paddle);
 	}
 	
