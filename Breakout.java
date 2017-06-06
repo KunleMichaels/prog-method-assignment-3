@@ -69,7 +69,8 @@ public class Breakout extends GraphicsProgram {
 			Color color = null;
 			if(row<2){
 				color = Color.RED;
-			} else if (row <=4) {
+			} 
+			if (row <=3) {
 				color = Color.GREEN;
 			};
 			drawRow(x, y, (NBRICK_ROWS ), color);
