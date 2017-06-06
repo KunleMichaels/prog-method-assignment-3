@@ -67,7 +67,7 @@ public class Breakout extends GraphicsProgram {
 		
 		for (int row = 0; row <NBRICK_ROWS; row++) {
 			drawRow(x, y, (NBRICK_ROWS ));
-			y += BRICK_HEIGHT;
+			y += BRICK_HEIGHT * BRICK_SEP;
 			
 		}
 			
