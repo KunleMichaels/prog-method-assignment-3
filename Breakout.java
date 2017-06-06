@@ -66,10 +66,10 @@ public class Breakout extends GraphicsProgram {
 		double y = (getHeight() - NBRICK_ROWS) / 10;
 		
 		for (int row = 0; row <NBRICK_ROWS; row++) {
-			Color color;
-			if(row==2){
+			Color color = null;
+			if(row<2){
 				color = Color.RED;
-			} else {
+			} else if (row <=4) {
 				color = Color.GREEN;
 			};
 			drawRow(x, y, (NBRICK_ROWS ), color);
