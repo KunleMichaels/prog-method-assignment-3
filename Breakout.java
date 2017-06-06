@@ -67,7 +67,7 @@ public class Breakout extends GraphicsProgram {
 		
 		for (int row = 0; row <NBRICK_ROWS; row++) {
 			drawRow(x, y, (NBRICK_ROWS ));
-			y += BRICK_SEP;
+			y += BRICK_HEIGHT + BRICK_SEP;
 			
 		}
 			
@@ -77,14 +77,14 @@ public class Breakout extends GraphicsProgram {
 		for (int i = 0; i < bricks; i++) {
 			drawBrick((x + i * BRICK_WIDTH), y);
 			x += BRICK_SEP;
+			
 		}
 		
 	}
 	
 	private void drawBrick(double x, double y) {
 		GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-		rect.setFilled(true);
-		rect.setColor(Color.CYAN);
+		for (int i=0; i<10; i=1+2);
 		add(rect);
 		
 	}
