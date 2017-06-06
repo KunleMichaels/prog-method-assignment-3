@@ -121,7 +121,7 @@ public class Breakout extends GraphicsProgram {
 		
 	public void mouseDragged (MouseEvent e) {
 		if (gobj != null) {
-			gobj.move(e.getX() - last.getX(), e.getY() - last.getY());
+			gobj.move(e.getX() - last.getX(), e.getY());
 			last = new GPoint(e.getPoint());
 		}
 		
