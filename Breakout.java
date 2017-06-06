@@ -124,6 +124,7 @@ public class Breakout extends GraphicsProgram {
 			while (getWidth() > PADDLE_WIDTH){
 			gobj.move(0+e.getX() - last.getX(), 0);
 			last = new GPoint(e.getPoint());
+			}
 		}
 		
 	}
