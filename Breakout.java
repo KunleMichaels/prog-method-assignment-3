@@ -107,8 +107,7 @@ public class Breakout extends GraphicsProgram {
 		
 		double x = (getWidth()-PADDLE_WIDTH)/2;
 		double y = (getHeight()-PADDLE_HEIGHT *5);
-		GRect paddle = new GRect(PADDLE_WIDTH, PADDLE_HEIGHT);
-		paddle.setLocation(x, y);
+		GRect paddle = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
 		paddle.setFilled(true);
 		add(paddle);
 		addMouseListeners();
