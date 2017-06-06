@@ -64,7 +64,7 @@ public class Breakout extends GraphicsProgram {
 		
 		double x = 0.5;
 		
-		double y = (70);
+		double y = (BRICK_Y_OFFSET);
 		
 		for (int row = 0; row <NBRICK_ROWS; row++) {
 			Color color = null;
