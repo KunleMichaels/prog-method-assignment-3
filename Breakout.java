@@ -63,7 +63,7 @@ public class Breakout extends GraphicsProgram {
 		
 		setSize(WIDTH, HEIGHT);
 		
-		double x = WIDTH / 2;
+		double x = WIDTH;
 		
 		double y = (BRICK_Y_OFFSET);
 		
