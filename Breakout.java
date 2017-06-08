@@ -113,23 +113,17 @@ public class Breakout extends GraphicsProgram {
 		addMouseListeners();
 		
 	}
-	
-	public void mousePressed (MouseEvent e) {
-		last = new GPoint(e.getPoint());
-		gobj = getElementAt(last);
-	}
+
 		
 	public void mouseDragged (MouseEvent e) {
 		if (e.getX() <= (getWidth() - PADDLE_WIDTH/2)){
-			if (gobj != null) {
-				gobj.move(e.getX() - last.getX(), 0);
-				last = new GPoint(e.getPoint());
-			}
+			paddle.setLocation(e.getX(), e.getY());
+			
 		}
 		
 	}
 	
-	private GObject gobj;
+	private GRect paddle;
 	private GPoint last;
 	private RandomGenerator rgen = RandomGenerator.getInstance(); 
 	
