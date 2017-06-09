@@ -174,22 +174,22 @@ public class Breakout extends GraphicsProgram {
 	}
 
 	private void checkforCollision() {
-		//collidewithwall();
+		collidewithwall();
 		collidewithPaddle();
 		collidewithBrick();
 		
 		
 	}
 	
-	//private void collidewithwall() {
-		//if (ball.getY() > getHeight() - BALL_RADIUS){
-		//	vy = -vy;
-			//double diff = ball.getY() - (getHeight() - BALL_RADIUS);
-			//ball.move(vx, -2 * diff); 
-		//}
+	private void collidewithwall() {
+		if (ball.getY() > getHeight() - BALL_RADIUS){
+			vy = -vy;
+			double diff = ball.getY() - (getHeight() - BALL_RADIUS);
+			ball.move(vx, -2 * diff); 
+		}
 
 		
-	//}
+	}
 	
 	private void collidewithBrick() {
 		collObj = getElementAt(getX(), getHeight()-PADDLE_Y_OFFSET - PADDLE_HEIGHT);
@@ -201,12 +201,10 @@ public class Breakout extends GraphicsProgram {
 
 	private void collidewithPaddle(){
 		GObject collObj = getElementAt(ball.getX(), ball.getY());
-			if (collObj == paddle) {
+		if (collObj == paddle) {
 			vy = -vy;
-			} else if (collObj == brick){
-			remove(brick);
 			
-			}
+		}
 		
 	}
 		
