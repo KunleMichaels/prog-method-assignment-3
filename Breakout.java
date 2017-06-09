@@ -56,6 +56,8 @@ public class Breakout extends GraphicsProgram {
 
 /** Number of turns */
 	private static final int NTURNS = 3;
+	
+	private GRect paddle;
 
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -105,7 +107,7 @@ public class Breakout extends GraphicsProgram {
 		setSize(WIDTH, HEIGHT); 
 		double x = (WIDTH -PADDLE_WIDTH)/2;
 		double y = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
-		GRect paddle = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
+		paddle = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
 		paddle.setFilled(true);
 		add(paddle);
 		addMouseListeners();
@@ -115,7 +117,9 @@ public class Breakout extends GraphicsProgram {
 	public void mouseMoved(MouseEvent e){
 		double y = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 		if (e.getX() >= 0 && e.getX() < (getWidth() - PADDLE_WIDTH)){
-	
+		paddle.setLocation(e.getX(), y);
+		} else if (e.getX() > WIDTH) {
+			paddle.setLocation(WIDTH, y);
 		}
 		
 		
@@ -124,6 +128,6 @@ public class Breakout extends GraphicsProgram {
 	
 	private RandomGenerator rgen = RandomGenerator.getInstance(); 
 	private double vx, vy;
-	private GRect paddle;
+	
 
 }
