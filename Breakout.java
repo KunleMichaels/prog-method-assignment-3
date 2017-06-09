@@ -60,11 +60,10 @@ public class Breakout extends GraphicsProgram {
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		
 		buildGame();
-		playGame();
-		
+		//playGame();
 	}
+	
 	private void buildGame() {
 		setSize(WIDTH, HEIGHT);
 		buildBricks(0, BRICK_Y_OFFSET);
@@ -76,22 +75,22 @@ public class Breakout extends GraphicsProgram {
 		for (int row = 0; row <NBRICK_ROWS; row++) {
 		for (int column =0; column < NBRICKS_PER_ROW; column++){
 			
-	double x = ax + (BRICK_HEIGHT + BRICK_SEP) * row;
-	double y = ay + (BRICK_WIDTH + BRICK_SEP) * column;
-	Color color= null;
-	GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-	rect.setFilled(true);
-			if(row<2){
+			double x = ax + (BRICK_HEIGHT + BRICK_SEP) * row;
+			double y = ay + (BRICK_WIDTH + BRICK_SEP) * column;
+			Color color= null;
+			GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
+			rect.setFilled(true);
+				if(row<2){
 				color = Color.RED;
-			} else if (row <=3) {
+				} else if (row <=3) {
 				color = Color.ORANGE;
-			} else if (row<=5){
+				} else if (row<=5){
 				color = Color.YELLOW;
-			} else if (row<=7){
+				} else if (row<=7){
 				color = Color.GREEN;
-			} else {
+				} else {
 				color = Color.CYAN;
-			}
+				}
 			
 		add(rect);
 			
@@ -101,7 +100,7 @@ public class Breakout extends GraphicsProgram {
 	}
 
 	
-	public void buildPaddle() {
+	private void buildPaddle() {
 		setSize(WIDTH, HEIGHT); 
 		double x = (WIDTH -PADDLE_WIDTH)/2;
 		double y = (HEIGHT - PADDLE_Y_OFFSET - PADDLE_HEIGHT*2);
@@ -112,11 +111,6 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 
-		
-	public void mouseMoved (MouseEvent e) {
-		
-		}
-		
 	
 	
 	private GPoint last;
