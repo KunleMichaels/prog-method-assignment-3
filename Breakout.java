@@ -176,7 +176,7 @@ public class Breakout extends GraphicsProgram {
 	private void checkforCollision() {
 		collidewithwall();
 		collidewithPaddle();
-		collidewithBrick();
+		//collidewithBrick();
 		
 		
 	}
@@ -203,10 +203,14 @@ public class Breakout extends GraphicsProgram {
 	}
 
 	private void collidewithPaddle(){
-		collObj = getElementAt(ball.getX(), ball.getY());
-		if (collObj == paddle) {
-			vy = -vy;
-			
+		if (brick != null){
+			collObj = getElementAt(ball.getX(), ball.getY());
+			if (collObj == paddle) {
+				vy = -vy;	
+			} else if (collObj == brick) {
+				remove(brick);
+				
+			}
 		}
 		
 	}
