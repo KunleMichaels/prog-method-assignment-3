@@ -57,6 +57,13 @@ public class Breakout extends GraphicsProgram {
 /** Number of turns */
 	private static final int NTURNS = 3;
 	
+	private static final double GRAVITY = 3.0;
+	
+	private RandomGenerator rgen = RandomGenerator.getInstance(); 
+	private double vx;
+	private double vy;
+
+	
 	private GRect paddle;
 	
 	private GOval ball;
@@ -69,6 +76,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void buildGame() {
+		
 		setSize(WIDTH, HEIGHT);
 		buildBricks(0, BRICK_Y_OFFSET);
 		buildPaddle();
@@ -133,8 +141,6 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	
-	private RandomGenerator rgen = RandomGenerator.getInstance(); 
-	private double vx, vy;
-	
+		
 
 }
