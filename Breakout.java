@@ -76,7 +76,7 @@ public class Breakout extends GraphicsProgram {
 /** Runs the Breakout program. */
 	public void run() {
 		buildGame();
-		//playGame();
+		playGame();
 	}
 	
 	private void buildGame() {
@@ -145,7 +145,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	
-	public void playGame() {
+	private void playGame() {
 		while (ball.getX() < getWidth() || ball.getY() < getHeight()) {  
 			moveBall();
 			//checkforCollision();
