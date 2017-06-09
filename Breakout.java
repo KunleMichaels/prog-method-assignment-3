@@ -59,6 +59,8 @@ public class Breakout extends GraphicsProgram {
 	
 	private static final double GRAVITY = 3.0;
 	
+	private static final int DELAY = 50;
+	
 	private RandomGenerator rgen = RandomGenerator.getInstance(); 
 	private double vx;
 	private double vy;
@@ -146,7 +148,7 @@ public class Breakout extends GraphicsProgram {
 			
 			moveBall();
 			checkforCollision();
-			pause();
+			pause(DELAY);
 		}
 			
 	}
