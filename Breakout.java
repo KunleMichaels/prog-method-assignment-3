@@ -83,7 +83,7 @@ public class Breakout extends GraphicsProgram {
 	rect.setFilled(false);
 	add(rect);
 			if(row<2){
-				color = Color.RED;
+				rect.setColor(Color.RED);
 			} else if (row <=3) {
 				color = Color.ORANGE;
 			} else if (row<=5){
