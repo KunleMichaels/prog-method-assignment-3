@@ -145,12 +145,11 @@ public class Breakout extends GraphicsProgram {
 	
 	
 	public void playGame() {
-		while (ball.getY() < getHeight()) {
-			
+
 			moveBall();
 			//checkforCollision();
 			//pause(DELAY);
-		}
+	
 			
 	}
 	
