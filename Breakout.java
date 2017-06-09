@@ -80,6 +80,7 @@ public class Breakout extends GraphicsProgram {
 		double y = ay + (BRICK_WIDTH + BRICK_SEP) * column;
 		GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
 		rect.setFilled(true);
+		add(rect);
 			if(row<2){
 				color = Color.RED;
 			} else if (row <=3) {
@@ -92,7 +93,7 @@ public class Breakout extends GraphicsProgram {
 				color = Color.CYAN;
 			}
 			
-			add(rect);
+			
 			
 		}
 		}
