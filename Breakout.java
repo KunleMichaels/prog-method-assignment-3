@@ -158,10 +158,11 @@ public class Breakout extends GraphicsProgram {
 	
 
 	private void moveBall() {
+		vy = vySTART;
 		vx = rgen.nextDouble(1.0, 3.0);     
 		if (rgen.nextBoolean(0.5)) vx = -vx;
-		vySTART += GRAVITY;
-		ball.move(0, vySTART);
+		vy += GRAVITY;
+		ball.move(0, vy);
 
 		
 		
