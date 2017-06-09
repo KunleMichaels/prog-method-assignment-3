@@ -203,8 +203,7 @@ public class Breakout extends GraphicsProgram {
 		GObject collObj = getElementAt(ball.getX(), ball.getY());
 		if (collObj == paddle) {
 			vy = -vy;
-		}
-		if (collObj == brick){
+		} else if (collObj == brick){
 			remove(brick);
 			
 		}
