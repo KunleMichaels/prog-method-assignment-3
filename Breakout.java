@@ -148,7 +148,7 @@ public class Breakout extends GraphicsProgram {
 	private void playGame() {
 		while (ball.getX() < getWidth() && ball.getY() < getHeight()) {  
 			moveBall();
-			//checkforCollision();
+			checkforCollision();
 			pause(DELAY);
 		}
 	
@@ -170,8 +170,17 @@ public class Breakout extends GraphicsProgram {
 	}
 
 	private void checkforCollision() {
+		collidewithPaddle();
+		collidewithBrick();
 		
 		
+	}
+	
+	private void collidewithPaddle() {
+		GObject collObj = getElementAt(paddle.getX(), paddle.getY());
+		if (collObj == ball) {
+			vy = -vy;
+		}
 	}
 
 	private void pause() {
