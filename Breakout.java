@@ -73,6 +73,8 @@ public class Breakout extends GraphicsProgram {
 	private GRect brick;
 	
 	private GOval ball;
+	
+	private GObject collObj;
 
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -190,7 +192,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void collidewithPaddle() {
-		GObject collObj = getElementAt(paddle.getX(), paddle.getY());
+		collObj = getElementAt(paddle.getX(), paddle.getY());
 		if (collObj == ball) {
 		remove(ball);
 		remove(paddle);
