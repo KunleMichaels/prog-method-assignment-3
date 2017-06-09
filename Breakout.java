@@ -201,7 +201,7 @@ public class Breakout extends GraphicsProgram {
 
 	private void collidewithBrick(){
 		GObject collObj = getElementAt(ball.getX(), ball.getY());
-		if (collObj == ball) {
+		if (collObj == paddle) {
 			remove(ball);
 		}
 		
