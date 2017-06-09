@@ -58,6 +58,8 @@ public class Breakout extends GraphicsProgram {
 	private static final int NTURNS = 3;
 	
 	private GRect paddle;
+	
+	private GOval ball;
 
 /* Method: run() */
 /** Runs the Breakout program. */
@@ -125,7 +127,7 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	private void buildBall() {
-		GOval ball = new GOval(getWidth()/2, getHeight()/2, 10, 10);
+		ball = new GOval(getWidth()/2, getHeight()/2, 10, 10);
 		ball.setFilled(true);
 		add(ball);
 	}
