@@ -191,7 +191,7 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	
-	private void collidewithPaddle() {
+	private void collidewithBrick() {
 		collObj = getElementAt(getX(), getHeight()-PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 		if (collObj == ball) {
 		vy = -vy;
@@ -199,12 +199,14 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 
-	private void collidewithBrick(){
+	private void collidewithPaddle(){
 		GObject collObj = getElementAt(ball.getX(), ball.getY());
 		if (collObj == paddle) {
 			vy = -vy;
-			double diff = ball.getY() - (getHeight() - BALL_RADIUS);
-			ball.move(vx, -2 * diff);
+		}
+		if (collObj == brick){
+			remove(brick);
+			
 		}
 		
 	}
