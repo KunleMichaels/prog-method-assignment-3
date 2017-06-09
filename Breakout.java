@@ -206,7 +206,7 @@ public class Breakout extends GraphicsProgram {
 		if (brick != null){
 			collObj = getElementAt(ball.getX(), ball.getY());
 			if (collObj == paddle) {
-				vy = -vy;	
+				vy = -vy * GRAVITY;	
 			} else if (collObj == brick) {
 				remove(brick);
 				
