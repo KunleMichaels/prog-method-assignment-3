@@ -76,11 +76,12 @@ public class Breakout extends GraphicsProgram {
 		for (int row = 0; row <NBRICK_ROWS; row++) {
 		for (int column =0; column < NBRICKS_PER_ROW; column++){
 			
-		double x = ax + (BRICK_HEIGHT + BRICK_SEP) * row;
-		double y = ay + (BRICK_WIDTH + BRICK_SEP) * column;
-		GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-		rect.setFilled(false);
-		add(rect);
+	double x = ax + (BRICK_HEIGHT + BRICK_SEP) * row;
+	double y = ay + (BRICK_WIDTH + BRICK_SEP) * column;
+		
+	GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
+	rect.setFilled(false);
+	add(rect);
 			if(row<2){
 				color = Color.RED;
 			} else if (row <=3) {
