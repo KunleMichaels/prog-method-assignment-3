@@ -192,8 +192,8 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void collidewithBrick() {
-		collObj = getElementAt(getX(), getHeight()-PADDLE_Y_OFFSET - PADDLE_HEIGHT);
-		if (collObj == ball) {
+		collObj = getElementAt(ball.getX(), ball.getY());
+		if (collObj == brick) {
 		vy = -vy;
 		}
 		
