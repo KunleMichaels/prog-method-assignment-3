@@ -203,6 +203,8 @@ public class Breakout extends GraphicsProgram {
 		GObject collObj = getElementAt(ball.getX(), ball.getY());
 		if (collObj == paddle) {
 			vy = -vy;
+			double diff = ball.getY() - (getHeight() - BALL_RADIUS);
+			ball.move(vx, -2 * diff);
 		}
 		
 	}
