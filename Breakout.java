@@ -181,9 +181,9 @@ public class Breakout extends GraphicsProgram {
 	
 	private void collidewithwall() {
 		if (ball.getY() > getHeight() - BALL_RADIUS){
-			vy += -vy;
+			vy = -vy;
 			double diff = ball.getY() - (getHeight() - BALL_RADIUS);
-			ball.move(0, -2 * diff); 
+			ball.move(0, -5 * diff); 
 		}
 
 		
