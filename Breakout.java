@@ -57,15 +57,15 @@ public class Breakout extends GraphicsProgram {
 /** Number of turns */
 	private static final int NTURNS = 3;
 	
-	private static final double vy = +3.0; 
-	
 	private static final double GRAVITY = 3.0;
 	
 	private static final int DELAY = 50;
 	
 	private RandomGenerator rgen = RandomGenerator.getInstance(); 
 	private double vx;
-		
+	private double vy = +3.0;
+
+	
 	private GRect paddle;
 	
 	private GOval ball;
