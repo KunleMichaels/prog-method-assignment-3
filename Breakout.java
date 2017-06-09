@@ -183,7 +183,7 @@ public class Breakout extends GraphicsProgram {
 		if (ball.getY() > getHeight() - BALL_RADIUS){
 			vy = -vy;
 			double diff = ball.getY() - (getHeight() - BALL_RADIUS);
-			ball.move(0, -2 * diff); 
+			ball.move(0, -15 * diff); 
 		}
 
 		
