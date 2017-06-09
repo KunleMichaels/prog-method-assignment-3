@@ -192,7 +192,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void collidewithPaddle() {
-		collObj = getElementAt(paddle.getX(), paddle.getY());
+		collObj = getElementAt(paddle.getX(), getHeight()-PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 		if (collObj == ball) {
 		remove(ball);
 		}
