@@ -195,7 +195,6 @@ public class Breakout extends GraphicsProgram {
 		collObj = getElementAt(paddle.getX(), paddle.getY());
 		if (collObj == ball) {
 		remove(ball);
-		remove(paddle);
 		}
 		
 	}
