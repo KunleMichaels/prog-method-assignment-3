@@ -160,7 +160,7 @@ public class Breakout extends GraphicsProgram {
 	
 
 	private void moveBall() {
-		vy = vySTART;
+		//vy = vySTART;
 		vx = rgen.nextDouble(1.0, 3.0);     
 		if (rgen.nextBoolean(0.5)) vx = -vx;
 		vy += GRAVITY;
@@ -183,7 +183,7 @@ public class Breakout extends GraphicsProgram {
 		if (ball.getY() > getHeight() - BALL_RADIUS){
 			vy = -vy * GRAVITY;
 			double diff = ball.getY() - (getHeight() - BALL_RADIUS);
-			ball.move(0, -vy * diff); 
+			ball.move(0, -2 * diff); 
 		}
 
 		
