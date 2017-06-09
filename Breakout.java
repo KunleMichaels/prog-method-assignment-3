@@ -171,7 +171,7 @@ public class Breakout extends GraphicsProgram {
 
 	private void checkforCollision() {
 		collidewithPaddle();
-		collidewithBrick();
+		//collidewithBrick();
 		
 		
 	}
