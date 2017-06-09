@@ -113,16 +113,16 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 
-	//public void mouseMoved(MouseEvent e){
-	//	double x = e.getX();
-	//	if (e.getX() >= 0 && e.getX() < (WIDTH - PADDLE_WIDTH)){
-		//	paddle.setLocation(e.getX(), 0);
-	//	} else if (e.getX() >= WIDTH) {
-		//	paddle.setLocation(WIDTH - PADDLE_WIDTH, 0);
-	//	}
+	public void mouseMoved(MouseEvent e){
+		double x = e.getX();
+		if (e.getX() >= 0 && e.getX() < (WIDTH - PADDLE_WIDTH)){
+			paddle.setLocation(e.getX(), getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
+		} else if (e.getX() >= WIDTH) {
+			paddle.setLocation(WIDTH - PADDLE_WIDTH, HEIGHT * PADDLE_Y_OFFSET);
+		}
 		
 		
-	//}
+	}
 	
 	private GPoint last;
 	private RandomGenerator rgen = RandomGenerator.getInstance(); 
