@@ -95,19 +95,19 @@ public class Breakout extends GraphicsProgram {
 	double x = ax + (BRICK_WIDTH + BRICK_SEP) * row;
 	double y = ay + (BRICK_HEIGHT + BRICK_SEP) * column;
 		
-	GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-	rect.setFilled(true);
-	add(rect);
+	GRect brick = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
+	brick.setFilled(true);
+	add(brick);
 			if(column<2){
-				rect.setColor(Color.RED);
+				brick.setColor(Color.RED);
 			} else if (column <=3) {
-				rect.setColor(Color.ORANGE);
+				brick.setColor(Color.ORANGE);
 			} else if (column<=5){
-				rect.setColor(Color.YELLOW);
+				brick.setColor(Color.YELLOW);
 			} else if (column<=7){
-				rect.setColor(Color.GREEN);
+				brick.setColor(Color.GREEN);
 			} else {
-				rect.setColor(Color.CYAN);
+				brick.setColor(Color.CYAN);
 			}
 				
 			
@@ -171,17 +171,21 @@ public class Breakout extends GraphicsProgram {
 
 	private void checkforCollision() {
 		collidewithPaddle();
-		//collidewithBrick();
+		collidewithBrick();
 		
 		
 	}
 	
 	private void collidewithPaddle() {
-		GObject collObj = getElementAt(paddle.getX(), paddle.getY());
-		if (collObj == ball) {
+		
 			vy = -vy;
-		}
+		
 	}
+
+	private void collidewithBrick(){
+		
+	}
+		
 
 	private void pause() {
 		
