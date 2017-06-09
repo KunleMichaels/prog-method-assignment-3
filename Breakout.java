@@ -190,7 +190,7 @@ public class Breakout extends GraphicsProgram {
 	}
 	
 	private void collidewithPaddle() {
-		if (ball.getX() == paddle.getX() && ball.getY() == paddle.getY()){
+		if (ball.getX() == paddle.getX() || ball.getY() == paddle.getY()){
 		ball.move(vx, -vy);
 		}
 		
