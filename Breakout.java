@@ -79,7 +79,7 @@ public class Breakout extends GraphicsProgram {
 		double x = ax + (BRICK_HEIGHT + BRICK_SEP) * row;
 		double y = ay + (BRICK_WIDTH + BRICK_SEP) * column;
 		GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-		rect.setFilled(true);
+		rect.setFilled(false);
 		add(rect);
 			if(row<2){
 				color = Color.RED;
@@ -117,6 +117,6 @@ public class Breakout extends GraphicsProgram {
 	private GPoint last;
 	private RandomGenerator rgen = RandomGenerator.getInstance(); 
 	private double vx, vy;
-	
+	private GRect paddle;
 
 }
