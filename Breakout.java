@@ -193,6 +193,7 @@ public class Breakout extends GraphicsProgram {
 		GObject collObj = getElementAt(paddle.getX(), paddle.getY());
 		if (collObj == ball) {
 		remove(ball);
+		remove(paddle);
 		}
 		
 	}
