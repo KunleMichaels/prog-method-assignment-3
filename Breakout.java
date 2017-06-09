@@ -70,7 +70,7 @@ public class Breakout extends GraphicsProgram {
 		setSize(WIDTH, HEIGHT);
 		buildBricks(0, BRICK_Y_OFFSET);
 		buildPaddle();
-		//buildBall();
+		buildBall();
 	}
 	
 	private void buildBricks(double ax, double ay) {
@@ -123,6 +123,11 @@ public class Breakout extends GraphicsProgram {
 		}
 		
 		
+	}
+	private void buildBall() {
+		GOval ball = new GOval(WIDTH/2, HEIGHT/2);
+		ball.setFilled(true);
+		add(ball);
 	}
 	
 	
