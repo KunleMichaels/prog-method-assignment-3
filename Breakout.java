@@ -147,8 +147,8 @@ public class Breakout extends GraphicsProgram {
 		while (ball.getX() < getWidth() && ball.getY() < getHeight()) {
 			
 			moveBall();
-			checkforCollision();
-			pause(DELAY);
+			//checkforCollision();
+			//pause(DELAY);
 		}
 			
 	}
