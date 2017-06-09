@@ -145,7 +145,7 @@ public class Breakout extends GraphicsProgram {
 	
 	
 	public void playGame() {
-		while (ball.getX() < getWidth() && ball.getY() < getHeight()) {
+		while (ball.getX() < getWidth()) {
 			
 			moveBall();
 			//checkforCollision();
@@ -156,7 +156,7 @@ public class Breakout extends GraphicsProgram {
 	
 	
 
-	public void moveBall() {
+	private void moveBall() {
 		vx = rgen.nextDouble(1.0, 3.0);
 		if (rgen.nextBoolean(0.5)) vx = -vx;
 		vy += GRAVITY;
