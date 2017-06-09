@@ -80,7 +80,7 @@ public class Breakout extends GraphicsProgram {
 	double y = ay + (BRICK_HEIGHT + BRICK_SEP) * column;
 		
 	GRect rect = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
-	rect.setFilled(false);
+	rect.setFilled(true);
 	add(rect);
 			if(column<2){
 				rect.setColor(Color.RED);
