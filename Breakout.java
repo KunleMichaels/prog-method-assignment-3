@@ -59,11 +59,11 @@ public class Breakout extends GraphicsProgram {
 	
 	private static final double GRAVITY = 3.0;
 	
-	private static final int DELAY = 50;
+	private static final int DELAY = 10;
 	
 	private RandomGenerator rgen = RandomGenerator.getInstance(); 
-	private double vx = 0.0;
-	private double vy = +3.0;
+	private double vx, vy;
+	private double vySTART = +3.0;
 
 	
 	private GRect paddle;
