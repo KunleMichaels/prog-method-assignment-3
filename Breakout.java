@@ -101,7 +101,7 @@ public class Breakout extends GraphicsProgram {
 	}
 
 	
-	private void buildPaddle() {
+	public void buildPaddle() {
 		setSize(WIDTH, HEIGHT); 
 		double x = (WIDTH -PADDLE_WIDTH)/2;
 		double y = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
