@@ -92,7 +92,7 @@ public class Breakout extends GraphicsProgram {
 				color = Color.CYAN;
 				}
 			
-		add(rect);
+			add(rect);
 			
 		}
 		}
