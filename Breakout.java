@@ -93,8 +93,7 @@ public class Breakout extends GraphicsProgram {
 			} else {
 				rect.setColor(Color.CYAN);
 			}
-			
-			
+				
 			
 		}
 		}
@@ -114,10 +113,9 @@ public class Breakout extends GraphicsProgram {
 	}
 
 	public void mouseMoved(MouseEvent e){
-		double x = getWidth();
 		double y = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 		if (e.getX() >= 0 && e.getX() < (getWidth() - PADDLE_WIDTH)){
-		paddle.setLocation(x, y);
+		paddle.setLocation(e.getX(), y);
 		}
 		
 		
