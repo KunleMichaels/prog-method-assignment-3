@@ -216,6 +216,9 @@ public class Breakout extends GraphicsProgram {
 			}
 		}
 		
+		//since we lay down a row of bricks, the last brick in the brick wall is assigned the value brick.
+		//so we narrow it down by saying that the collier does not equal to a paddle or null, 
+		//so all that is left is the brick
 		else if (collider != null) {
 			remove(collider);
 			brickCounter--;
