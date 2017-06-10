@@ -132,8 +132,12 @@ public class Breakout extends GraphicsProgram {
 
 	
 	private void buildPaddle() {
-		setSize(WIDTH, HEIGHT); 
+		setSize(WIDTH, HEIGHT);
+		//starting the paddle in the middle of the screen
 		double x = (WIDTH -PADDLE_WIDTH)/2;
+		//the paddle height stays consistent throughout the game
+		//need to make sure to subtract the PADDLE_HEIGHT, 
+		//since the rectangle gets drawn from the top left corner
 		double y = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 		paddle = new GRect(x, y, PADDLE_WIDTH, PADDLE_HEIGHT);
 		paddle.setFilled(true);
