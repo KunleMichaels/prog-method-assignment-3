@@ -241,7 +241,7 @@ public class Breakout extends GraphicsProgram {
 			 * but less than the height where the ball hits the paddle minus 4. 
 			 */
 			
-			if (ball.getY() >= getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT - BALL_RADIUS && ball.getY() < getHeight() - PADDLE_HEIGHT) {
+			if (ball.getY() = getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT - BALL_RADIUS*2 && ball.getY() < getHeight() - PADDLE_HEIGHT) {
 				vy = -vy;
 			}
 		}
