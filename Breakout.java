@@ -143,6 +143,13 @@ public class Breakout extends GraphicsProgram {
 	}
 
 	public void mouseMoved(MouseEvent e){
+		/* The mouse tracks the middle point of the paddle. 
+		 * If the middle point of the paddle is between half paddle width of the screen
+		 * and half a paddle width before the end of the screen, 
+		 * the x location of the paddle is set at where the mouse is minus half a paddle's width, 
+		 * and the height remains the same
+		 */
+		
 		double y = (getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT);
 		if (e.getX() >= 0 && e.getX() < (getWidth() - PADDLE_WIDTH)){
 		paddle.setLocation(e.getX(), y);
@@ -152,6 +159,8 @@ public class Breakout extends GraphicsProgram {
 		
 		
 	}
+	
+	//ball set-up
 	private void buildBall() {
 		ball = new GOval(getWidth()/2 - BALL_RADIUS, getHeight()/2 - BALL_RADIUS, 10, 10);
 		ball.setFilled(true);
