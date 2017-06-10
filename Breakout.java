@@ -105,8 +105,21 @@ public class Breakout extends GraphicsProgram {
 		Color color= null;
 		for (int row = 0; row <NBRICK_ROWS; row++) {
 		for (int column =0; column < NBRICKS_PER_ROW; column++){
+			/* To get the y coordinate of the starting height:
+			 * 	start at the given length from the top for the first row,
+			 * 	then add a brick height and a brick separation for each of the following rows
+			 */
 			
 	double x = ax + (BRICK_WIDTH + BRICK_SEP) * row;
+	/* To get the x coordinate for the starting width:
+	 * 	start at the center width, 
+	 * 	subtract half of the bricks (width) in the row,  
+	 * 	subtract half of the separations (width) between the bricks in the row,
+	 * now you're at where the first brick should be, 
+	 * so for the starting point of the next bricks in the column, you need to: 
+	 * 	add a brick width 
+	 * 	add a separation width
+	 */
 	double y = ay + (BRICK_HEIGHT + BRICK_SEP) * column;
 		
 	GRect brick = new GRect(x, y, BRICK_WIDTH, BRICK_HEIGHT);
@@ -130,7 +143,7 @@ public class Breakout extends GraphicsProgram {
 			
 	}
 
-	
+	//paddle set-up
 	private void buildPaddle() {
 		setSize(WIDTH, HEIGHT);
 		//starting the paddle in the middle of the screen
