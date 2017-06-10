@@ -188,16 +188,28 @@ public class Breakout extends GraphicsProgram {
 		ball.move(vx, vy);
 		//check for walls
 		//need to get vx and vy at the point closest to 0 or the other edge
+		
 		if ((ball.getX() -vx <= 0 && vx < 0) || (ball.getX() + vx >= (getWidth() - BALL_RADIUS*2) && vx < 0)) {
 			vx = -vx;
 		}
+		//We don't need to check for the bottom wall, since the ball can fall through the wall at that point
 		
 		if ((ball.getY() - vy <= 0 && vy < 0 )) {
 			vy = -vy;
 		}
 		
+		//check for other objects
 		GObject collider = getCollidingObject();
 		if (collider == paddle) {
+			
+			/* We need to make sure that the ball only bounces off the top part of the paddle  
+			 * and also that it doesn't "stick" to it if different sides of the ball hit the paddle quickly and get the ball "stuck" on the paddle.
+			 * I ran "println ("vx: " + vx + ", vy: " + vy + ", ballX: " + ball.getX() + ", ballY: " +ball.getY());"
+			 * and found that the ball.getY() changes by 4 every time, instead of 1,
+			 * so it never reaches exactly the the height at which the ball hits the paddle (paddle height + ball height), 
+			 * therefore, I estimate the point to be greater or equal to the height at which the ball hits the paddle, 
+			 * but less than the height where the ball hits the paddle minus 4. 
+			 */
 			
 			if (ball.getY() >= getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT - BALL_RADIUS*2 && ball.getY() < getHeight() - PADDLE_HEIGHT) {
 				vy = -vy;
