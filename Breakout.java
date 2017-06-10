@@ -100,7 +100,7 @@ public class Breakout extends GraphicsProgram {
 		buildPaddle();
 		buildBall();
 	}
-	
+	//drawing all the bricks necessary for the game
 	private void buildBricks(double ax, double ay) {
 		Color color= null;
 		/*need to have several columns in each row
