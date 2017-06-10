@@ -186,8 +186,14 @@ public class Breakout extends GraphicsProgram {
 
 	private void moveBall() {
 		ball.move(vx, vy);
+		//check for walls
+		//need to get vx and vy at the point closest to 0 or the other edge
 		if ((ball.getX() -vx <= 0 && vx < 0) || (ball.getX() + vx >= (getWidth() - BALL_RADIUS*2) && vx < 0)) {
 			vx = -vx;
+		}
+		
+		if ((ball.getY() - vy <= 0 && vy < 0 )) {
+			vy = -vy;
 		}
 		
 		GObject collider = getCollidingObject();
