@@ -141,7 +141,7 @@ public class Breakout extends GraphicsProgram {
 		addMouseListeners();
 		
 	}
-
+	//making the mouse track the paddle
 	public void mouseMoved(MouseEvent e){
 		/* The mouse tracks the middle point of the paddle. 
 		 * If the middle point of the paddle is between half paddle width of the screen
