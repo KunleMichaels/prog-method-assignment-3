@@ -70,17 +70,27 @@ public class Breakout extends GraphicsProgram {
 	
 	private GRect paddle;
 	
-	private GRect brick;
-	
 	private GOval ball;
 	
-	private GObject collObj;
 
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		buildGame();
-		playGame();
+		for(int i=0; i < NTURNS; i++) {
+			buildGame();
+			playGame();
+			if(brickCounter == 0) {
+				ball.setVisible(false);
+				printWinner();
+				break;
+			}
+			if(brickCounter > 0) {
+				removeAll();
+			}
+		}
+		if(brickCounter > 0) {
+			printGameOver();
+		}
 	}
 	
 	private void buildGame() {
@@ -143,82 +153,98 @@ public class Breakout extends GraphicsProgram {
 		
 	}
 	private void buildBall() {
-		ball = new GOval(getWidth()/2, getHeight()/2, 10, 10);
+		ball = new GOval(getWidth()/2 - BALL_RADIUS, getHeight()/2 - BALL_RADIUS, 10, 10);
 		ball.setFilled(true);
 		add(ball);
 	}
 	
 	
 	private void playGame() {
-		while (ball.getX() < getWidth() && ball.getY() < getHeight()) {  
+		waitForClick();
+		getBallVelocity();
+		while (true) {
 			moveBall();
-			checkforCollision();
-			pause(DELAY);
+			if (ball.getY() >= getHeight()) {
+				break;
+			}
+			if (brickCounter == 0) {
+				break;
+			}
 		}
 	
 			
 	}
 	
-	
+	private void getBallVelocity () {
+		vy = 4.0;
+		vx = rgen.nextDouble(1.0, 3.0);     
+		if (rgen.nextBoolean(0.5)) {
+			vx = -vx;
+		}
+		
+	}
 
 	private void moveBall() {
-		//vy = vySTART;
-		vx = rgen.nextDouble(1.0, 3.0);     
-		if (rgen.nextBoolean(0.5)) vx = -vx;
-		vy += GRAVITY;
-		ball.move(0, vy);
-
+		ball.move(vx, vy);
+		if ((ball.getX() -vx <= 0 && vx < 0) || (ball.getX() + vx >= (getWidth() - BALL_RADIUS*2) && vx < 0)) {
+			vx = -vx;
+		}
 		
+		GObject collider = getCollidingObject();
+		if (collider == paddle) {
+			
+			if (ball.getY() >= getHeight() - PADDLE_Y_OFFSET - PADDLE_HEIGHT - BALL_RADIUS*2 && ball.getY() < getHeight() - PADDLE_HEIGHT) {
+				vy = -vy;
+			}
+		}
 		
-		
-	}
-
-	private void checkforCollision() {
-		collidewithwall();
-		collidewithPaddle();
-		//collidewithBrick();
-		
-		
-	}
-	
-	private void collidewithwall() {
-		if (ball.getY() > getHeight() - BALL_RADIUS){
+		else if (collider != null) {
+			remove(collider);
+			brickCounter--;
 			vy = -vy;
-			double diff = ball.getY() - (getHeight() - BALL_RADIUS);
-			ball.move(vx, -2 * diff); 
+			
 		}
-
+		pause(DELAY);
+		
+		
 		
 	}
 	
-	private void collidewithBrick() {
-		if (brick != null){
-			collObj = getElementAt(ball.getX(), ball.getY());
-			if (collObj == brick) {
-				remove(brick);
-			}
+	private GObject getCollidingObject() {
+		if((getElementAt(ball.getX(), ball.getY())) != null) {
+	         return getElementAt(ball.getX(), ball.getY());
+	      }
+		else if (getElementAt( (ball.getX() + BALL_RADIUS*2), ball.getY()) != null ){
+	         return getElementAt(ball.getX() + BALL_RADIUS*2, ball.getY());
+	      }
+		else if(getElementAt(ball.getX(), (ball.getY() + BALL_RADIUS*2)) != null ){
+	         return getElementAt(ball.getX(), ball.getY() + BALL_RADIUS*2);
+	      }
+		else if(getElementAt((ball.getX() + BALL_RADIUS*2), (ball.getY() + BALL_RADIUS*2)) != null ){
+	         return getElementAt(ball.getX() + BALL_RADIUS*2, ball.getY() + BALL_RADIUS*2);
+	      }
 		
+		else{
+			return null;
 		}
-		
 	}
-
-	private void collidewithPaddle(){
-		if (brick != null){
-			collObj = getElementAt(ball.getX()/2, ball.getY()/2 );
-			if (collObj == paddle) {
-				vy = -vy * GRAVITY;	
-			} else if (collObj == brick) {
-				remove(brick);
-				
-			}
-		}
-		
+	
+	private void printGameOver() {
+		GLabel gameOver = new GLabel ("Game Over", getWidth()/2, getHeight()/2);
+		gameOver.move(-gameOver.getWidth()/2, -gameOver.getHeight());
+		gameOver.setColor(Color.RED);
+		add (gameOver);
 	}
-		
-
-	private void pause() {
-		
-		
+	
+	private int brickCounter = 100;
+	
+	private void printWinner() {
+		GLabel Winner = new GLabel ("Winner!!", getWidth()/2, getHeight()/2);
+		Winner.move(-Winner.getWidth()/2, -Winner.getHeight());
+		Winner.setColor(Color.RED);
+		add (Winner);
 	}
+	
+	
 
 }
