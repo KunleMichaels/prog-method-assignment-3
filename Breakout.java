@@ -71,11 +71,13 @@ public class Breakout extends GraphicsProgram {
 	private GRect paddle;
 	
 	private GOval ball;
+	private Color MAGENTA;
 	
 
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
+		setBackground(MAGENTA);
 		for(int i=0; i < NTURNS; i++) {
 			buildGame();
 			playGame();
