@@ -103,6 +103,10 @@ public class Breakout extends GraphicsProgram {
 	
 	private void buildBricks(double ax, double ay) {
 		Color color= null;
+		/*need to have several columns in each row
+		 * so there need to be two for loops, 
+		 * one for loop for the rows and one for loop for the columns.
+		 */ 
 		for (int row = 0; row <NBRICK_ROWS; row++) {
 		for (int column =0; column < NBRICKS_PER_ROW; column++){
 			/* To get the y coordinate of the starting height:
