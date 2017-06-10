@@ -71,13 +71,11 @@ public class Breakout extends GraphicsProgram {
 	private GRect paddle;
 	
 	private GOval ball;
-	private Color PINK;
 	
 
 /* Method: run() */
 /** Runs the Breakout program. */
 	public void run() {
-		setBackground(PINK);
 		for(int i=0; i < NTURNS; i++) {
 			buildGame();
 			playGame();
@@ -221,7 +219,7 @@ public class Breakout extends GraphicsProgram {
 		//check for walls
 		//need to get vx and vy at the point closest to 0 or the other edge
 		
-		if ((ball.getX() -vx <= 0 && vx < 0) || (ball.getX() + vx >= (getWidth() - BALL_RADIUS*2) && vx < 0)) {
+		if ((ball.getX() -vx <= 0 && vx < 0) || (ball.getX() + vx == (getWidth() - BALL_RADIUS*2) && vx < 0)) {
 			vx = -vx;
 		}
 		//We don't need to check for the bottom wall, since the ball can fall through the wall at that point
