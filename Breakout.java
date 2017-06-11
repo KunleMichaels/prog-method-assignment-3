@@ -255,7 +255,7 @@ public class Breakout extends GraphicsProgram {
 		//so all that is left is the brick
 		else if (collider != null) {
 			remove(collider);
-			brickCounter--;
+			brickCounter++;
 			vy = -vy;
 			
 		}
@@ -291,7 +291,7 @@ public class Breakout extends GraphicsProgram {
 		add (gameOver);
 	}
 	
-	private int brickCounter = 100;
+	private int brickCounter = 0;
 	
 	private void printWinner() {
 		GLabel Winner = new GLabel ("Winner!!", getWidth()/2, getHeight()/2);
