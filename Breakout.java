@@ -14,6 +14,7 @@ import acm.util.*;
 import java.applet.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class Breakout extends GraphicsProgram {
 
@@ -77,6 +78,8 @@ public class Breakout extends GraphicsProgram {
 /** Runs the Breakout program. */
 	public void run() {
 		addActionListeners();
+		JButton but = new JButton("Score");
+		
 		for(int i=0; i < NTURNS; i++) {
 			buildGame();
 			playGame();
