@@ -83,7 +83,7 @@ public class Breakout extends GraphicsProgram {
 		for(int i=0; i < NTURNS; i++) {
 			buildGame();
 			playGame();
-			if(brickCounter == 0) {
+			if(brickCounter == 100) {
 				ball.setVisible(false);
 				printWinner();
 				break;
