@@ -83,7 +83,7 @@ public class Breakout extends GraphicsProgram {
 		for(int i=0; i < NTURNS; i++) {
 			buildGame();
 			playGame();
-			if(brickCounter == 100) {
+			if(brickCounter == 0) {
 				ball.setVisible(false);
 				printWinner();
 				break;
@@ -255,7 +255,7 @@ public class Breakout extends GraphicsProgram {
 		//so all that is left is the brick
 		else if (collider != null) {
 			remove(collider);
-			brickCounter++;
+			brickCounter--;
 			vy = -vy;
 			
 		}
@@ -291,7 +291,7 @@ public class Breakout extends GraphicsProgram {
 		add (gameOver);
 	}
 	
-	private int brickCounter = 0;
+	private int brickCounter = 100;
 	
 	private void printWinner() {
 		GLabel Winner = new GLabel ("Winner!!", getWidth()/2, getHeight()/2);
