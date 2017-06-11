@@ -79,7 +79,7 @@ public class Breakout extends GraphicsProgram {
 	public void run() {
 		addActionListeners();
 		JButton but = new JButton("Score");
-		
+		add(but, SOUTH);
 		for(int i=0; i < NTURNS; i++) {
 			buildGame();
 			playGame();
