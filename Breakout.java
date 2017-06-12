@@ -223,7 +223,7 @@ public class Breakout extends GraphicsProgram {
 		//check for walls
 		//need to get vx and vy at the point closest to 0 or the other edge
 		
-		if ((ball.getX() -vx <= 0 && vx < 0) || (ball.getX() + vx >= (getWidth() - BALL_RADIUS))) {
+		if ((ball.getX() <= 0) || (ball.getX() >= (getWidth() - BALL_RADIUS))) {
 			vx = -vx;
 		}
 		//We don't need to check for the bottom wall, since the ball can fall through the wall at that point
