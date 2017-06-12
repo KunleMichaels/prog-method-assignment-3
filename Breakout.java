@@ -228,7 +228,7 @@ public class Breakout extends GraphicsProgram {
 		}
 		//We don't need to check for the bottom wall, since the ball can fall through the wall at that point
 		
-		if ((ball.getY() - vy <= 0 && vy < 0 )) {
+		if ((ball.getY() <= 0 )) {
 			vy = -vy;
 		}
 		
